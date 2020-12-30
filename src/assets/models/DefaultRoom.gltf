@@ -1,0 +1,168 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                1,
+                2
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "camera" : 0,
+            "name" : "Robincamera50mm,id=maincamera_Orientation",
+            "rotation" : [
+                -0.7071067690849304,
+                0,
+                0,
+                0.7071067690849304
+            ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "Robincamera50mm,id=maincamera",
+            "rotation" : [
+                -0.687360942363739,
+                0.0002871703472919762,
+                -0.001274757320061326,
+                -0.7263148427009583
+            ],
+            "translation" : [
+                0.14395150542259216,
+                9.99544620513916,
+                48.38371276855469
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "room,id=mainroom,receiveshadows",
+            "rotation" : [
+                0,
+                0,
+                0,
+                -1
+            ],
+            "translation" : [
+                0,
+                8.00036907196045,
+                0
+            ]
+        }
+    ],
+    "cameras" : [
+        {
+            "name" : "camera,id=maincamera",
+            "perspective" : {
+                "aspectRatio" : 1.7777777777777777,
+                "yfov" : 0.3995964825153351,
+                "zfar" : 10000000000,
+                "znear" : 0.009999999776482582
+            },
+            "type" : "perspective"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Mat",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.16078431904315948,
+                    0.3019607961177826,
+                    0.4117647111415863,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "room,id=mainroom,receiveshadows",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 20,
+            "max" : [
+                15,
+                8,
+                10
+            ],
+            "min" : [
+                -15,
+                -8,
+                -10
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 30,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 240,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 240,
+            "byteOffset" : 240
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 160,
+            "byteOffset" : 480
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 60,
+            "byteOffset" : 640
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 700,
+            "uri" : "data:application/octet-stream;base64,AABwwQAAAMEAACBBAABwwQAAAEEAACBBAABwQQAAAMEAACBBAABwQQAAAEEAACBBAABwQQAAAMEAACDBAABwQQAAAEEAACDBAABwwQAAAMEAACDBAABwwQAAAEEAACDBAABwQQAAAMEAACBBAABwQQAAAEEAACDBAABwwQAAAMEAACDBAABwwQAAAEEAACDBAABwwQAAAEEAACBBAABwwQAAAEEAACDBAABwQQAAAEEAACDBAABwQQAAAMEAACDBAABwQQAAAMEAACDBAABwwQAAAMEAACDBAABwwQAAAMEAACBBAABwQQAAAEEAACBBAAAAAAAAgL8AAACAAACAvwAAAAAAAACAAAAAAAAAgL8AAACAAACAPwAAAAAAAACAAAAAAAAAAAAAAIC/AACAPwAAAAAAAACAAAAAAAAAgL8AAACAAAAAAAAAAAAAAIC/AACAPwAAAAAAAACAAAAAAAAAAAAAAIC/AACAvwAAAAAAAACAAACAvwAAAAAAAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgL8AAACAAACAPwAAAAAAAACAAAAAAAAAAAAAAIC/AACAvwAAAAAAAACAAAAAAAAAgD8AAACAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPxMADgAMABIAAQAKABEABwAEABAABQAIAA8AAgAGAA4ADQAMAAEACwAKAAcACQAEAAUAAwAIAAIAAAAGAA=="
+        }
+    ]
+}
