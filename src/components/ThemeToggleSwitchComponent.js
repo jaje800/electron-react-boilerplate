@@ -6,14 +6,14 @@ import {
   sunMotion,
   moonMotion,
   toggleGlow,
-} from '../LolaTheme';
+} from '../contexts/styling/LolaTheme';
 import { useTheme } from '../contexts/ThemeContext';
 import { ReactComponent as MoonIcon } from '../assets/images/ThemeToggleImages/moonshine.svg';
 import { ReactComponent as SunIcon } from '../assets/images/ThemeToggleImages/sunshine.svg';
 
 const ToggleContainer = styled.div`
   background: url(${(props) =>
-      props.animate ? toggleBackground : toggleBackgroundStatic})
+    props.animate ? toggleBackground : toggleBackgroundStatic})
     no-repeat center;
   //background: url(${toggleBackground}) no-repeat center;
   //border: ${(props) => (props.animate ? `1px solid hotpink` : 'none')};
