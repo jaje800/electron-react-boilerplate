@@ -80,7 +80,9 @@ export default function App() {
             {/* <MyThemeProvider>
               <LolaGlobalStyles /> */}
             <BrowserRouter>
-              {/* <PrivateRoute>
+              <PrivateRoute>
+                <Hello />
+                {/*
                   <MainPage>
                     <WorkingSection>
                       <Switch>
@@ -103,10 +105,8 @@ export default function App() {
                       </Switch>
                     </WorkingSection>
                   </MainPage>
-              </PrivateRoute> */}
-              <Switch>
-                <Route path="/" component={Hello} />
-              </Switch>
+*/}
+              </PrivateRoute>
             </BrowserRouter>
             {/* </MyThemeProvider> */}
           </UserContextProvider>
