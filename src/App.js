@@ -5,14 +5,14 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 
-//import LolaGlobalStyles from './contexts/styling/LolaGlobalStyles';
-//import { MyThemeProvider } from './contexts/ThemeContext';
+import LolaGlobalStyles from './contexts/styling/LolaGlobalStyles';
+import { MyThemeProvider } from './contexts/ThemeContext';
 
+import { MainPage } from './components/GreenRoomComponents/MainPage';
+import { WorkingSection } from './components/GreenRoomComponents/WorkingSection';
 /*
 import TheBlueRoom from './screens/BigBlueRoom/TheBlueRoom';
 import NetworkScan from './screens/NetworkScan';
-import { MainPage } from './components/GreenRoomComponents/MainPage';
-import { WorkingSection } from './components/GreenRoomComponents/WorkingSection';
 import GreenRoom from './screens/GreenRoom';
 */
 import AudioSessionReducer from './reducers/AudioSessionReducer';
@@ -77,38 +77,37 @@ export default function App() {
         <SessionContextProvider>
           <UserContextProvider>
             <AudioDeviceController />
-            {/* <MyThemeProvider>
-              <LolaGlobalStyles /> */}
-            <BrowserRouter>
-              <PrivateRoute>
-                <Hello />
-                {/*
+            <MyThemeProvider>
+              <LolaGlobalStyles />
+              <BrowserRouter>
+                <PrivateRoute>
                   <MainPage>
                     <WorkingSection>
                       <Switch>
-                        <Route
-                          path={BLUE_ROOM_PATH}
-                          exact
-                          component={TheBlueRoom}
-                        />
-                        <Route
-                          path={NETWORK_SCAN_PATH}
-                          exact
-                          component={NetworkScan}
-                        />
-                        <Route
-                          path={GREEN_ROOM_PATH}
-                          exact
-                          component={GreenRoom}
-                        />
-                        <Route path="/" component={BlankScreen} />
+                        {/*
+                      <Route
+                        path={BLUE_ROOM_PATH}
+                        exact
+                        component={TheBlueRoom}
+                      />
+                      <Route
+                        path={NETWORK_SCAN_PATH}
+                        exact
+                        component={NetworkScan}
+                      />
+                      <Route
+                        path={GREEN_ROOM_PATH}
+                        exact
+                        component={GreenRoom}
+                      />
+                      */}
+                        <Route path="/" component={Hello} />
                       </Switch>
                     </WorkingSection>
                   </MainPage>
-*/}
-              </PrivateRoute>
-            </BrowserRouter>
-            {/* </MyThemeProvider> */}
+                </PrivateRoute>
+              </BrowserRouter>
+            </MyThemeProvider>
           </UserContextProvider>
         </SessionContextProvider>
       </React.StrictMode>
