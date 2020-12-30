@@ -1,0 +1,21 @@
+{
+    "configurations": [
+      {
+        "name": "default",
+        "macFrameworkPath": ["/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"],
+        "includePath": [
+          "/usr/local/include/opus",
+          "/usr/local/include"
+        ],
+        "intelliSenseMode": "gcc-x64",
+        "compilerPath": "/usr/bin/gcc",
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "defines": [
+          "ANON_LOG_KEEP_RECENT",
+          "MACOSX_DEPLOYMENT_TARGET=101300"
+        ]
+      }
+    ],
+    "version": 4
+  }
