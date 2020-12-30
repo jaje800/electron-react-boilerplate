@@ -8,11 +8,13 @@ import { dependencies as externals } from '../../src/package.json';
 
 export default {
   externals: [...Object.keys(externals || {})],
-
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

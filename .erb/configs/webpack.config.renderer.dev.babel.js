@@ -25,7 +25,10 @@ const requiredByDLLConfig = module.parent.filename.includes(
 /**
  * Warn if the DLL is not built
  */
-if (!requiredByDLLConfig && !(fs.existsSync(dllDir) && fs.existsSync(manifest))) {
+if (
+  !requiredByDLLConfig &&
+  !(fs.existsSync(dllDir) && fs.existsSync(manifest))
+) {
   console.log(
     chalk.black.bgYellow.bold(
       'The DLL files are missing. Sit back while we build them for you with "yarn build-dll"'
@@ -44,7 +47,7 @@ export default merge(baseConfig, {
   entry: [
     'core-js',
     'regenerator-runtime/runtime',
-    require.resolve('../../src/index.tsx'),
+    require.resolve('../../src/index.js'),
   ],
 
   output: {
@@ -55,15 +58,13 @@ export default merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.[jt]sx?$/,
+        test: '/.(js|jsx|tsx)$/',
         exclude: /node_modules/,
         use: [
           {
             loader: require.resolve('babel-loader'),
             options: {
-              plugins: [
-                require.resolve('react-refresh/babel'),
-              ].filter(Boolean),
+              plugins: [require.resolve('react-refresh/babel')].filter(Boolean),
             },
           },
         ],
@@ -200,7 +201,6 @@ export default merge(baseConfig, {
     ],
   },
   plugins: [
-
     requiredByDLLConfig
       ? null
       : new webpack.DllReferencePlugin({
@@ -261,13 +261,13 @@ export default merge(baseConfig, {
     },
     before() {
       console.log('Starting Main Process...');
-        spawn('npm', ['run', 'start:main'], {
-          shell: true,
-          env: process.env,
-          stdio: 'inherit',
-        })
-          .on('close', (code) => process.exit(code))
-          .on('error', (spawnError) => console.error(spawnError));
+      spawn('npm', ['run', 'start:main'], {
+        shell: true,
+        env: process.env,
+        stdio: 'inherit',
+      })
+        .on('close', (code) => process.exit(code))
+        .on('error', (spawnError) => console.error(spawnError));
     },
   },
 });

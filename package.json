@@ -1,7 +1,8 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Fast Refresh for rapid application development",
+  "name": "lola",
+  "productName": "Lola",
+  "description": "Super cool low latency app description",
+  "author": "Jamwerks, Inc.",
   "scripts": {
     "build": "concurrently \"yarn build:main\" \"yarn build:renderer\"",
     "build:main": "cross-env NODE_ENV=production webpack --config ./.erb/configs/webpack.config.main.prod.babel.js",
@@ -30,8 +31,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "appId": "com.jamwerks.lola",
+    "productName": "Jamwerks Lola",
     "files": [
       "dist/",
       "node_modules/",
@@ -40,16 +41,24 @@
       "main.prod.js.map",
       "package.json"
     ],
-    "afterSign": ".erb/scripts/Notarize.js",
     "mac": {
       "target": [
         "dmg"
       ],
+      "icon": "assets/icon.icns",
+      "identity": "Jamwerks, Inc. (Z9T3Y3H6FU)",
+      "category": "public.app-category.music",
       "type": "distribution",
       "hardenedRuntime": true,
       "entitlements": "assets/entitlements.mac.plist",
       "entitlementsInherit": "assets/entitlements.mac.plist",
       "gatekeeperAssess": false
+    },
+    "protocols": {
+      "name": "Lola-protocol",
+      "schemes": [
+        "Lola"
+      ]
     },
     "dmg": {
       "contents": [
@@ -90,43 +99,6 @@
       "repo": "electron-react-boilerplate"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
-  },
-  "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
-  },
-  "contributors": [
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
-    },
-    {
-      "name": "John Tran",
-      "email": "jptran318@gmail.com",
-      "url": "https://github.com/jooohhn"
-    }
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
-  },
-  "keywords": [
-    "electron",
-    "boilerplate",
-    "react",
-    "typescript",
-    "ts",
-    "sass",
-    "webpack",
-    "hot",
-    "reload"
-  ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {
@@ -197,7 +169,7 @@
     "chalk": "^4.1.0",
     "concurrently": "^5.3.0",
     "core-js": "^3.6.5",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
     "detect-port": "^1.3.0",
     "electron": "^11.0.1",
@@ -234,6 +206,7 @@
     "prettier": "^2.0.5",
     "react-refresh": "^0.9.0",
     "react-test-renderer": "^17.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "rimraf": "^3.0.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
@@ -248,23 +221,37 @@
     "yarn-deduplicate": "^3.1.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "audio-core": "git+https://github.com/jamwerks/audio-core.git#v0.1.44",
+    "axios": "^0.21.1",
+    "babel-plugin-macros": "^3.0.1",
     "electron-debug": "^3.1.0",
+    "electron-is-dev": "^1.2.0",
     "electron-log": "^4.2.4",
     "electron-updater": "^4.3.4",
+    "formik": "^2.2.6",
+    "framer-motion": "^3.1.1",
     "history": "^5.0.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
     "regenerator-runtime": "^0.13.5",
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.19",
+    "styled-components": "^5.2.1",
+    "styled-theming": "^2.2.0",
+    "three": "^0.124.0",
+    "three-gltf-loader": "^1.111.0",
+    "yup": "^0.32.8"
   },
   "devEngines": {
     "node": ">=10.x",
     "npm": ">=6.x",
     "yarn": ">=1.21.3"
-  },
-  "collective": {
-    "url": "https://opencollective.com/electron-react-boilerplate-594"
   },
   "browserslist": [],
   "prettier": {
@@ -289,10 +276,5 @@
     "baseBranches": [
       "next"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
