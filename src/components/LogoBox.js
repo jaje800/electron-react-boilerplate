@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { fontSizes, devOutline } from '../LolaTheme';
+import { fontSizes, devOutline } from '../contexts/styling/LolaTheme';
 
 /*-------------------------------------------------------------------------
 LogoBox contains the Lola svg
