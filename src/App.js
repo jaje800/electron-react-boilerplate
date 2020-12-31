@@ -13,8 +13,9 @@ import { WorkingSection } from './components/GreenRoomComponents/WorkingSection'
 /*
 import TheBlueRoom from './screens/BigBlueRoom/TheBlueRoom';
 import NetworkScan from './screens/NetworkScan';
-import GreenRoom from './screens/GreenRoom';
 */
+import GreenRoom from './screens/GreenRoom';
+
 import AudioSessionReducer from './reducers/AudioSessionReducer';
 import { AudioSessionSagas } from './sagas/AudioSessionSaga';
 
@@ -95,12 +96,13 @@ export default function App() {
                         exact
                         component={NetworkScan}
                       />
-                      <Route
-                        path={GREEN_ROOM_PATH}
-                        exact
-                        component={GreenRoom}
-                      />
                       */}
+                        <Route
+                          path={GREEN_ROOM_PATH}
+                          exact
+                          component={GreenRoom}
+                        />
+
                         <Route path="/" component={Hello} />
                       </Switch>
                     </WorkingSection>

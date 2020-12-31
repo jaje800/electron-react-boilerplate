@@ -16,6 +16,9 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 
+const audioCore = require('audio-core');
+const audioServer = require('./audioServer');
+
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
@@ -52,6 +55,8 @@ const installExtensions = async () => {
 };
 
 const createWindow = async () => {
+  audioServer.init();
+
   if (
     process.env.NODE_ENV === 'development' ||
     process.env.DEBUG_PROD === 'true'
@@ -114,8 +119,12 @@ const createWindow = async () => {
 /**
  * Add event listeners...
  */
+app.on('will-quit', () => {
+  audioCore.stop_audio_engine();
+});
 
 app.on('window-all-closed', () => {
+  audioCore.stop_audio_engine();
   // Respect the OSX convention of having the application in memory even
   // after all windows have been closed
   if (process.platform !== 'darwin') {
