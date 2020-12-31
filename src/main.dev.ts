@@ -16,8 +16,9 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 
+//import * as audioCore from 'audio-core';
 const audioCore = require('audio-core');
-const audioServer = require('./audioServer');
+const audioServer = require('./assets/audioServer');
 
 export default class AppUpdater {
   constructor() {

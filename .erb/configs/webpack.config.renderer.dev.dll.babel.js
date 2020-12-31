@@ -22,7 +22,7 @@ export default merge(baseConfig, {
 
   target: 'electron-renderer',
 
-  externals: ['fsevents', 'crypto-browserify'],
+  externals: ['fsevents', 'crypto-browserify', 'audio-core'],
 
   /**
    * Use `module` from `webpack.config.renderer.dev.js`
